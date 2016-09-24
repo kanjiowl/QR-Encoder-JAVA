@@ -2,9 +2,11 @@
 
 A QR code (2D Barcode) encoder written from scratch in Java.
 
+**UNDER DEVELOPMENT**
+
 What can it do :
 =================
- * It is able to generate a proper **version 1** 2D barcode decodable by [zxing decoder](zxing.org) (or any other QR Code decoder for the matter) containing alphanumeric characters. 
+ * It is currently able to generate a proper **version 1** 2D barcode decodable by [zxing decoder](zxing.org) (or any other QR Code decoder for the matter) containing alphanumeric characters. 
 
 Limitation(s):
 ================
