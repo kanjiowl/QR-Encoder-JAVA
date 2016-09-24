@@ -18,3 +18,9 @@ Limitation(s):
 Note(s):
 =================
  * Most of the version parameters are currently hardcoded because I have yet to get the version-capacity tables in; they apparently don't have any formulas to generate them.
+
+
+References Used:
+================
+    * http://www.swetake.com/qrcode/qr1_en.html
+    * http://www.thonky.com/qr-code-tutorial/introduction

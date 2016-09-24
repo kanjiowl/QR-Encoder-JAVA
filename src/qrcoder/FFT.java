@@ -23,6 +23,9 @@
  */
 package qrcoder;
 
+///** Abandonned due to complexity. Maybe Later. **//////
+
+
 //import org.apache.commons.math3.complexI.Complex;
 //import org.apache.commons.math3.complex.ComplexUtils;
 
