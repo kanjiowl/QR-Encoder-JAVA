@@ -51,14 +51,6 @@ import static qrcoder.DataMatrix.*;
 
 class DataMatrix {
 
-    int[][] data;
-    int[][] dataForMasking;
-
-    int MASK_PATTERN = 3;
-
-    // ZERO = WHITE ; 1 = BLACK
-    // odd = black; even = white
-
     public static final int NULL = 0,
             ZERO = 1,
             ONE = 2,
@@ -70,6 +62,12 @@ class DataMatrix {
             FORMAT_ONE = 12,
             DARK_MODULE = 9,
             PAD_OFFSET = 0;
+    int[][] data;
+    int[][] dataForMasking;
+
+    // ZERO = WHITE ; 1 = BLACK
+    // odd = black; even = white
+    int MASK_PATTERN = 3;
 
 
 
@@ -90,19 +88,9 @@ class DataMatrix {
         placeFormatInfoArea(data);
         placeDarkModule(data);
         placeMessage(data, msg);
-
-        try {
-            Image.showImage(data,Image.type.INT,"dataOut");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         maskData(data,MASK_PATTERN);
+
         String formatString = Encoder.generateFormatString(MASK_PATTERN);
-
-        // Assertion test case
-//        assert (formatString.equals("001100111010000"));
-
         placeFormatString(formatString, data);
     }
 
@@ -116,79 +104,6 @@ class DataMatrix {
     private static void  maskData(int[][] data, int maskPattern ){
         Mask.applyMask(data, maskPattern);
     }
-
-
-    private void placeFormatString(String formatString, int[][] toBeFilled) {
-
-        // Top Left Corner
-        // Starting pos = (8,0)
-        // finishing pos = (0,8)
-        // skip over = (8,6) & (6,8)
-
-        int row = 8, col = 0;
-        int i = 0;
-
-        for (int steps = 0; steps < 17; steps++) {
-
-            if (row == 8 && col == 6) {
-                col++;
-                continue;
-            } else if (row == 6 && col == 8) {
-
-                row--;
-                continue;
-            }
-
-
-            if (steps < 9) {
-                toBeFilled[row][col] = Character.getNumericValue(formatString.charAt(i)) + 1;
-                col++;
-                i++;
-                if (steps == 8) {
-                    col--;
-                    row--;
-                }
-
-            } else {
-                toBeFilled[row][col] = Character.getNumericValue(formatString.charAt(i)) + 1;
-                row--;
-                i++;
-            }
-        }
-
-        // Lower Left and Upper Right corner.
-        int row2 = toBeFilled.length - 1, col2 = 8;
-        boolean swtch = true;
-
-        i = 0;
-
-        for (int steps = 0; steps < 17; steps++) {
-
-            if (row2 == (toBeFilled.length - 8)) {
-                row2 = 8;
-                col2 = toBeFilled.length - 8;
-                continue;
-            }
-
-            if (steps < 9) {
-                System.out.println("{" + row2 + "," + col2 + "}");
-
-                toBeFilled[row2][col2] = Character.getNumericValue(formatString.charAt(i)) + 1;
-                row2--;
-                i++;
-                if (steps == 8) {
-                    i--;
-                    row2++;
-                }
-            } else {
-                System.out.println("{" + row2 + "," + col2 + "}");
-                toBeFilled[row2][col2] = Character.getNumericValue(formatString.charAt(i)) + 1;
-                col2++;
-                i++;
-            }
-        }
-    }
-
 
     /**
      * Places the dark module required by the standard.
@@ -306,7 +221,7 @@ class DataMatrix {
 
                 }
             }
-            // traversing downwards 
+            // traversing downwards
             if (!goingUpward) {
 
                 // In case of switching
@@ -511,19 +426,90 @@ class DataMatrix {
         }
     }
 
+    public static void printMatrix(int[][] mat) {
+        for (int i = 0; i < mat.length; i++) {
+            System.out.println(Arrays.toString(mat[i]));
+
+        }
+    }
+
+    private void placeFormatString(String formatString, int[][] toBeFilled) {
+
+        // Top Left Corner
+        // Starting pos = (8,0)
+        // finishing pos = (0,8)
+        // skip over = (8,6) & (6,8)
+
+        int row = 8, col = 0;
+        int i = 0;
+
+        for (int steps = 0; steps < 17; steps++) {
+
+            if (row == 8 && col == 6) {
+                col++;
+                continue;
+            } else if (row == 6 && col == 8) {
+
+                row--;
+                continue;
+            }
+
+
+            if (steps < 9) {
+                toBeFilled[row][col] = Character.getNumericValue(formatString.charAt(i)) + 1;
+                col++;
+                i++;
+                if (steps == 8) {
+                    col--;
+                    row--;
+                }
+
+            } else {
+                toBeFilled[row][col] = Character.getNumericValue(formatString.charAt(i)) + 1;
+                row--;
+                i++;
+            }
+        }
+
+        // Lower Left and Upper Right corner.
+        int row2 = toBeFilled.length - 1, col2 = 8;
+        boolean swtch = true;
+
+        i = 0;
+
+        for (int steps = 0; steps < 17; steps++) {
+
+            if (row2 == (toBeFilled.length - 8)) {
+                row2 = 8;
+                col2 = toBeFilled.length - 8;
+                continue;
+            }
+
+            if (steps < 9) {
+                System.out.println("{" + row2 + "," + col2 + "}");
+
+                toBeFilled[row2][col2] = Character.getNumericValue(formatString.charAt(i)) + 1;
+                row2--;
+                i++;
+                if (steps == 8) {
+                    i--;
+                    row2++;
+                }
+            } else {
+                System.out.println("{" + row2 + "," + col2 + "}");
+                toBeFilled[row2][col2] = Character.getNumericValue(formatString.charAt(i)) + 1;
+                col2++;
+                i++;
+            }
+        }
+    }
+
     /**
      * Print the matrix.
      */
      void printMatrix() {
         for (int i = 0; i < this.data.length; i++) {
             System.out.println(Arrays.toString(this.data[i]));
-        }
-    }
-    public static void printMatrix (int[][] mat)
-    {
-        for (int i = 0; i < mat.length; i++){
-            System.out.println(Arrays.toString(mat[i]));
-
         }
     }
 
@@ -542,8 +528,8 @@ class DataMatrix {
 
 class Mask {
 
-    private static int[][] workData;
     public static int[][] finalData;
+    private static int[][] workData;
 
     /**
      * Constructor for Data Matrix.

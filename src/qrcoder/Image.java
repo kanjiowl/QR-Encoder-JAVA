@@ -40,11 +40,6 @@ import javax.imageio.ImageIO;
 class Image {
 
 
-   enum type {
-        INT,
-        BIN
-    }
-
     public static final int WIDTH = Main.MODULES * 32;
     public static final int HEIGHT = Main.MODULES * 32;
     public static final int TYPE = BufferedImage.TYPE_INT_RGB;
@@ -130,8 +125,8 @@ class Image {
                 painter.fillRect(j * pixelsPerModule, i * pixelsPerModule, pixelsPerModule, pixelsPerModule);
 
                 /*Draw grid*/
-                painter.setPaint(new Color(25, 25, 25));
-                painter.drawRect(j * pixelsPerModule, i * pixelsPerModule, pixelsPerModule, pixelsPerModule);
+//                painter.setPaint(new Color(25, 25, 25));
+//                painter.drawRect(j * pixelsPerModule, i * pixelsPerModule, pixelsPerModule, pixelsPerModule);
 
             }
         }
@@ -156,6 +151,11 @@ class Image {
     private static void outputToDisk(BufferedImage image, String outputFileName) throws IOException {
         File outputFile = new File(outputFileName + ".png");
         ImageIO.write(image, "png", outputFile);
+    }
+
+    enum type {
+        INT,
+        BIN
     }
 
 }

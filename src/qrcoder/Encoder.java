@@ -64,22 +64,9 @@ public class Encoder {
         // Encode Message
         String encodedMsg = encodeMessage(msg);
 
-        /* Test Begins */
-//
-//        String test = "001000000100000111001101010001010010100111011100001011101000000011101100";
-//        System.out.println(encodedMsg);
-//        System.out.println(test);
-//        if (encodedMsg.length() != test.length())
-//            throw new AssertionError("length mismatch", null);
-//
-//        assert(encodedMsg.equals(test)): "msg content and test content mismatch" ;
-
-        /* Test Ends  */
-
         //Create polynomials
-        
-        int[] msgPoly = generateMsgPolynomial(encodedMsg);      // Message Polynomial
-        int[] genPoly = generateGeneratorPolynomial();          // Generator Polynomial
+        int[] msgPoly = generateMsgPolynomial(encodedMsg);
+        int[] genPoly = generateGeneratorPolynomial();
 
         flipArray(msgPoly);
 
@@ -89,12 +76,9 @@ public class Encoder {
         // Generate final String
         flipArray(errorCodes);
 
-        for (int  i =0; i < errorCodes.length; i++){
+        for (int i = 0; i < errorCodes.length; i++) {
             encodedMsg += leftPad (Integer.toBinaryString(errorCodes[i]), 8);
         }
-
-        int [] finalPoly = generateMsgPolynomial(encodedMsg);
-        System.out.println(Arrays.toString(finalPoly));
         return encodedMsg;
     }
 
@@ -143,7 +127,6 @@ public class Encoder {
         }
 
         return str;
-
     }
 
     private static void flipArray(int[] arr) {
@@ -161,7 +144,6 @@ public class Encoder {
             pad += "0";
         }
         return pad + _byte;
-
     }
 
     /**
@@ -331,7 +313,7 @@ public class Encoder {
         final String padByte236 = "11101100";                // Filler Bytes;
         final String padByte17 = "00010001";
 
-        int reqCapacity = getMaxMsgCapacity();                 // Find out the required Final Size
+        int reqCapacity = getMaxMsgCapacity();               // Find out the required Final Size
         int padSize = reqCapacity - encodedData.length();   // Calculate the required padding
         int padSizeInBytes = padSize / 8;                   // Pad size in bytes
 
@@ -344,15 +326,6 @@ public class Encoder {
         }
         return encodedData;
     }
-
-//    public static String padderFinal(String encodedData) {
-//        String version = getVersion();
-//        String ecl = getECL();
-//        int reqSize = getReqSize(version, ecl);
-//        String terminator = getTerminator(reqSize);
-//        encodedData += terminator;
-//        return encodedData;
-//    }
 
     private static String padToMakeMultipleofEight(String encodedData) {
 
