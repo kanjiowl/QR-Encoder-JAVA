@@ -22,5 +22,5 @@ Note(s):
 
 References Used:
 ================
-*[Swetake - How to create QR Code] (http://www.swetake.com/qrcode/qr1_en.html)
-*[Thonky - QR cde tutorial ] (http://www.thonky.com/qr-code-tutorial/introduction)
+* [Swetake - How to create QR Code] (http://www.swetake.com/qrcode/qr1_en.html)
+* [Thonky - QR c0de tutorial ] (http://www.thonky.com/qr-code-tutorial/introduction)
