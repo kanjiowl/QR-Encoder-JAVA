@@ -68,7 +68,7 @@ public class Main {
         mat.printMatrix();
 
         try {
-            Image.showImage(mat.toArray(), Image.type.INT, "testImage1");
+            Image.showImage(mat.toArray(), Image.type.INT, "output");
         } catch (IOException e) {
             e.printStackTrace();
         }
