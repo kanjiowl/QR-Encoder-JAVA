@@ -1,4 +1,4 @@
-# QRGen-JAVA
+# qr-encoder-JAVA
 
 A QR code (2D Barcode) encoder written from scratch in Java.
 
