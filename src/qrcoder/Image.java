@@ -39,10 +39,9 @@ import javax.imageio.ImageIO;
 
 class Image {
 
-
-    public static final int WIDTH = Main.MODULES * 32;
-    public static final int HEIGHT = Main.MODULES * 32;
-    public static final int TYPE = BufferedImage.TYPE_INT_RGB;
+    private static final int WIDTH = Main.MODULES * 32;
+    private static final int HEIGHT = Main.MODULES * 32;
+    private static final int TYPE = BufferedImage.TYPE_INT_RGB;
 
     /**
      * Draws the image based on the data.
@@ -52,7 +51,7 @@ class Image {
      * @param outputFileName
      * @throws IOException
      */
-    public static void showImage(int[][] data, type data_type,  String outputFileName) throws IOException {
+    static void showImage(int[][] data, type data_type, String outputFileName) throws IOException {
 
         BufferedImage image = new BufferedImage(WIDTH, HEIGHT, TYPE);
         Graphics2D painter = image.createGraphics();
@@ -124,7 +123,7 @@ class Image {
 
                 painter.fillRect(j * pixelsPerModule, i * pixelsPerModule, pixelsPerModule, pixelsPerModule);
 
-                /*Draw grid*/
+                /*Overlay grid*/
 //                painter.setPaint(new Color(25, 25, 25));
 //                painter.drawRect(j * pixelsPerModule, i * pixelsPerModule, pixelsPerModule, pixelsPerModule);
 
@@ -157,6 +156,7 @@ class Image {
         INT,
         BIN
     }
+
 
 }
 
