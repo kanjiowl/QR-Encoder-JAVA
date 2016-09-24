@@ -10,7 +10,7 @@ Limitation(s):
 ================
   * Only supports Alphanumeric mode.
   * No capacity table available. Version information and relevant parameters are hardcoded. 
-  * Can't find the best mask pattern to be used resulting in minimal penalty.
+  * Can't find the best mask pattern to be used.
   * No support for "blocking" or "grouping", hence no support for QR Code that requires doing so.
   * No support for alignment pointers required by high level versions.
   
