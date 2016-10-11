@@ -4,7 +4,7 @@ A QR code (2D Barcode) encoder written from scratch in Java.
 
 About the project:
 ===================
-As a hobby project I wanted to build an encoder that could encode qr codes; perhaps the idea was influenced by their ubiquiti. It also marks my first forray into any form of cryptography. So far, the most satisfying part for me was the implementation of Galois field arithmetics and being able to generate the Reed-Solomon error codes (although I wish I could say I learned enough).
+A hobby project of an amateur programmer. 
 
 
 What can it do :
