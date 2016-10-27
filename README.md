@@ -2,10 +2,6 @@
 
 A QR code (2D Barcode) encoder written from scratch in Java.
 
-About the project:
-===================
-A hobby project of an amateur programmer. 
-
 
 What can it do :
 =================
