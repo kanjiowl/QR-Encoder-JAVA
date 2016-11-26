@@ -1,7 +1,7 @@
 # qr-encoder-JAVA
 
 A QR code (2D Barcode) encoder written from scratch in Java.
-
+The project is currently in a very early developmental stage.
 
 What can it do :
 =================
@@ -9,6 +9,7 @@ What can it do :
 
 Limitation(s):
 ================
+  * Comand line interface only (Not fleshed out).
   * Only supports Alphanumeric mode.
   * No capacity table available. Version information and relevant parameters are hardcoded. 
   * Can't find the best mask pattern to be used.
