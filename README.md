@@ -9,7 +9,7 @@ What can it do :
 
 Limitation(s):
 ================
-  * Comand line interface only (Not fleshed out).
+  * Command line interface only. (Practically useless in current state)
   * Only supports Alphanumeric mode.
   * No capacity table available. Version information and relevant parameters are hardcoded. 
   * Can't find the best mask pattern to be used.
