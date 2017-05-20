@@ -1,7 +1,6 @@
 # qr-encoder-JAVA
 
-A QR code (2D Barcode) encoder written from scratch in Java.
-The project is currently in a very early developmental stage.
+A QR code (2D Barcode) encoder written from scratch in Java. This is a hobby with almost no likelihood of getting any update. This is something I built because I was interested the QR codes, perhaps due to their tremendous ubiquity.
 
 What can it do :
 =================
