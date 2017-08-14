@@ -4,7 +4,7 @@ A QR code (2D Barcode) encoder written from scratch in Java. In case anyone word
 
 What can it do :
 =================
- * It is currently able to generate a proper version 1 (tested) 2D barcode decodable by [ZXing decoder](http://zxing.org) (or any other QR Code decoder for the matter) containing only alphanumeric characters. 
+ * It is currently able to generate 2D barcode (only version 1) decodable by [ZXing decoder](http://zxing.org) (or any other QR Code decoder for the matter) containing only alphanumeric characters. 
 
 Limitation(s):
 ================
