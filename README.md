@@ -4,7 +4,7 @@ A QR code encoder written in Java. This is a hobby project with remote likelihoo
 
 Features :
 =================
- * Generate 2D barcode (only version 1) decodable by that contain only alphanumeric characters. 
+ * Generate 2D barcode (only version 1) that contain only alphanumeric characters. 
 
 Limitation(s):
 ================
