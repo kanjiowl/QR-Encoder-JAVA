@@ -1,4 +1,4 @@
-# qr-encoder-JAVA
+# Simple QR encoder 
 
 A QR code encoder written in Java. This is a hobby project with remote likelihood of getting any update. 
 
