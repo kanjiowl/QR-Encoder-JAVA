@@ -17,5 +17,5 @@ What it cannot do:
   
 References:
 ================
-* [Swetake - How to create QR Code] (http://www.swetake.com/qrcode/qr1_en.html)
-* [Thonky - QR Code Tutorial ] (http://www.thonky.com/qr-code-tutorial/introduction)
+* Swetake - How to create QR Code (http://www.swetake.com/qrcode/qr1_en.html)
+* Thonky - QR Code Tutorial  (http://www.thonky.com/qr-code-tutorial/introduction)
