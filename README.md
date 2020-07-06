@@ -1,19 +1,19 @@
-# Simple QR encoder 
+# Java QR Encoder 
 
-A QR code encoder written in Java. This is a hobby project with remote likelihood of getting any update. 
+A QR code encoder written in Java. 
 
 Features :
 =================
- * Generate 2D barcode (only version 1) that contain only alphanumeric characters. 
+ * Generate 2D barcode/Ver. 1 QR code containing only alphanumeric characters. 
 
 Limitation(s):
 ================
-  * No interface 
-  * Only supports Alphanumeric mode.
-  * No capacity table available. Version information and relevant parameters are hardcoded. 
+  * No graphical interface 
+  * Only supports alphanumeric characters
+  * Missing capacity table---version information and relevant parameters are hardcoded. 
   * Can't find the best mask pattern to be used.
-  * No support for "blocking" or "grouping", hence no support for QR Code that requires doing so.
-  * No support for alignment pointers required by high level versions.
+  * No support for "blocking" or "grouping"
+  * No support for alignment pointers required by higher version QR codes.
   
 References:
 ================
