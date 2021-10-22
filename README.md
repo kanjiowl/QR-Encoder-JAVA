@@ -2,11 +2,11 @@
 
 A QR code encoder written in Java. 
 
-What can it do :
+What can it do:
 =================
  * Generate 2D barcode/Ver. 1 QR code containing only alphanumeric characters. 
 
-What it cannot do:
+Limitations:
 ================
   * No graphical interface 
   * Only supports alphanumeric characters
